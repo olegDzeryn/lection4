@@ -1,0 +1,31 @@
+<mat-card class="example-card">
+  <mat-card-title>{{film1.title}}</mat-card-title>
+  <mat-card-title>{{film1.id}}</mat-card-title>
+  <img mat-card-image src='{{film1.poster_path}}'>
+  <mat-card-header class="example-discription">
+    <p [ngClass]="{'toVisible': param.param1,
+          'toHidden': param.param2  
+        }">
+
+      {{film1.description.substring(0, 50)}}
+
+    </p>
+    <p [ngClass]="{'toVisible': param.param2,
+          'toHidden': param.param1  
+       }">
+
+      {{film1.overview}}
+
+    </p>
+
+
+
+  </mat-card-header>
+  <button autofocus (click)="filmDescription()">{{lengthDescription()}}</button>
+  <mat-card-actions>
+    <button mat-button (click)="setToParent()">{{choisFavorite()}}</button>
+
+
+
+  </mat-card-actions>
+</mat-card>
